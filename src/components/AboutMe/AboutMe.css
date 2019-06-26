@@ -6,13 +6,17 @@
 
 .infoContainer{
     background: white;
+    background-image: url("../../images/xp.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
 .btnAboutMe{
     background: none;
     border: none;
     font-family: 'Bangers', cursive;
-    font-size: 2rem;
+    font-size: 3rem;
     line-height: initial;
     padding: 1rem;
     margin: 0;
@@ -25,8 +29,4 @@
 
 .win98Container{
     display: flex;
-    background-image: url("../../images//xp.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
 }

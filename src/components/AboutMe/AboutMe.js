@@ -22,7 +22,7 @@ export default function AboutMe(props) {
             <Grid xs={12} md={4} className="btnContainer">
                 <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>TECH STACK</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>WHO AM I</button>
-                <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>WHAT AM I PASSIONATE ABOUT</button>
+                <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>My Passions</button>
             </Grid>
             <Grid xs={12} md={8} className="infoContainer">
                 <ThemeProvider theme={themes.default}>
@@ -35,7 +35,7 @@ export default function AboutMe(props) {
                                 </Fieldset> : null}
                             </WindowContent>
                         </Window>
-                        {currIndex === 0 ? <List>
+                        {currIndex === 0 ? <List style={{ display: "table" }}>
                             <ListItem style={{ background: currTechIndex === 0 ? "#000080" : null, color: currTechIndex === 0 ? "white" : null }} onClick={() => setCurrTechIndex(0)}>🤗 React</ListItem>
                             <ListItem style={{ background: currTechIndex === 1 ? "#000080" : null, color: currTechIndex === 1 ? "white" : null }} onClick={() => setCurrTechIndex(1)}>😃 NodeJS</ListItem>
                             <ListItem style={{ background: currTechIndex === 2 ? "#000080" : null, color: currTechIndex === 2 ? "white" : null }} onClick={() => setCurrTechIndex(2)}>🙂 .Net</ListItem>
