@@ -14,13 +14,14 @@ export default function AboutMe(props) {
     const [currIndex, setCurrIndex] = useState(0)
     const [currTechIndex, setCurrTechIndex] = useState(0)
 
+    const LABELS = ["React", "NodeJS", ".Net", "PHP", "Databases", "Other"]
     const btnActiveColor = "black"
 
     return (
         <Grid container>
             <Grid xs={12} md={4} className="btnContainer">
-                <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>WHO AM I</button>
-                <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>TECH STACK</button>
+                <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>TECH STACK</button>
+                <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>WHO AM I</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>WHAT AM I PASSIONATE ABOUT</button>
             </Grid>
             <Grid xs={12} md={8} className="infoContainer">
@@ -28,19 +29,19 @@ export default function AboutMe(props) {
                     <div className="win98Container">
                         <Window>
                             <WindowContent>
-                                <Fieldset label={currIndex === 0 ? "Who Am I" : currIndex === 1 ? "Tech Stack" : "My Passions"}>{Copy.overview[currIndex]}</Fieldset>
-                                {currIndex === 1 ? <Fieldset>
+                                <Fieldset label={currIndex === 0 ? "Tech Stack" : currIndex === 1 ? "Who Am I" : "My Passions"}>{Copy.overview[currIndex]}</Fieldset>
+                                {currIndex === 0 ? <Fieldset label={LABELS[currTechIndex]}>
                                     {Copy.moreInfo[currTechIndex]}
                                 </Fieldset> : null}
                             </WindowContent>
                         </Window>
-                        {currIndex === 1 ? <List>
-                            <ListItem onClick={() => setCurrTechIndex(0)}>🤗 React</ListItem>
-                            <ListItem onClick={() => setCurrTechIndex(1)}>😃 NodeJS</ListItem>
-                            <ListItem onClick={() => setCurrTechIndex(2)}>🙂 .Net</ListItem>
-                            <ListItem onClick={() => setCurrTechIndex(3)}>🤔 PHP</ListItem>
-                            <ListItem onClick={() => setCurrTechIndex(4)}>💾 Databases</ListItem>
-                            <ListItem onClick={() => setCurrTechIndex(5)}>💃🏻 Other</ListItem>
+                        {currIndex === 0 ? <List>
+                            <ListItem style={{ background: currTechIndex === 0 ? "#000080" : null, color: currTechIndex === 0 ? "white" : null }} onClick={() => setCurrTechIndex(0)}>🤗 React</ListItem>
+                            <ListItem style={{ background: currTechIndex === 1 ? "#000080" : null, color: currTechIndex === 1 ? "white" : null }} onClick={() => setCurrTechIndex(1)}>😃 NodeJS</ListItem>
+                            <ListItem style={{ background: currTechIndex === 2 ? "#000080" : null, color: currTechIndex === 2 ? "white" : null }} onClick={() => setCurrTechIndex(2)}>🙂 .Net</ListItem>
+                            <ListItem style={{ background: currTechIndex === 3 ? "#000080" : null, color: currTechIndex === 3 ? "white" : null }} onClick={() => setCurrTechIndex(3)}>🤔 PHP</ListItem>
+                            <ListItem style={{ background: currTechIndex === 4 ? "#000080" : null, color: currTechIndex === 4 ? "white" : null }} onClick={() => setCurrTechIndex(4)}>💾 Databases</ListItem>
+                            <ListItem style={{ background: currTechIndex === 5 ? "#000080" : null, color: currTechIndex === 5 ? "white" : null }} onClick={() => setCurrTechIndex(5)}>💃🏻 Other</ListItem>
                             <Divider />
                             <ListItem disabled>😴 Angular</ListItem>
                         </List> : null}
