@@ -638,8 +638,7 @@ pre tt:after {
 }
 
 #githubLogo, #twitterLogo{
-  animation: rotate360 15s ease-in-out infinite forwards;
-  animation-delay: 5s;
+  animation: rotate360 1s ease-in-out infinite forwards;
 }
 
 #githubLogo:hover, #twitterLogo:hover{
@@ -803,9 +802,9 @@ pre tt:after {
 
 @keyframes rotate360 {
   0%, 10% {
-    transform:rotate(0deg);
+    transform: translateY(0);
   }
   90%, 100%{
-    transform:rotate(360deg);
+    transform: translateY(5);
   }
 }

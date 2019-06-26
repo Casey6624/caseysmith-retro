@@ -1,8 +1,9 @@
 module.exports = {
+  pathPrefix: `/img`,
   siteMetadata: {
     title: `CASEY SMITH`,
-    description: `Sheffield Based Software Developer.`,
-    author: `@CaseySmith`,
+    description: `Sheffield Software Developer`,
+    author: `@CaseySmith <hello@caseysmith.co.uk>`,
     menuLinks: [
       {
         name: "HOME",
@@ -38,17 +39,20 @@ module.exports = {
       },
     },
     // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
-  ],
-  {
-  resolve: `gatsby-source-wordpress`,
-    options: {
-    baseUrl: `caseysmith.co.uk/API`,
-      protocol: "https",
+    // To learn more, visit: https://gatsby.app/offline
+    // 'gatsby-plugin-offline',
+    `gatsby-plugin-react-helmet`,
+    {
+      resolve: `gatsby-source-wordpress`,
+      options: {
+        baseUrl: `caseysmith.co.uk/API`,
+        protocol: "https",
         hostingWPCOM: false,
-          useACF: true,
-            verboseOutput: true
-  },
-},
+        useACF: true,
+        verboseOutput: true
+      },
+    },
+
+  ],
+
 }
