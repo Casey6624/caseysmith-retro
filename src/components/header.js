@@ -15,7 +15,6 @@ export default function Header(props) {
         <Menu left styles={styles}>
           <a id="home" className="menu-item" href="/">HOME</a><br />
           <a id="about" className="menu-item" href="/thoughts">THOUGHTS</a><br />
-          <a id="contact" className="menu-item" href="/contact">CONTACT</a>
         </Menu>
         <div className="socialIcons">
           <p id="githubLogo" onClick={() => window.open(GITHUB_URL)}>{Icons.Github}</p>

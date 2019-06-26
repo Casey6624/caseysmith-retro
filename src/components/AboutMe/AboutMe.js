@@ -7,7 +7,7 @@ import "./AboutMe.css"
 import Copy from "./Copy"
 // React 95 stuff
 import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { reset, themes, List, ListItem, Divider, Fieldset, Window, WindowContent } from "react95";
+import { reset, themes, List, ListItem, Divider, Fieldset, Window, WindowContent, WindowHeader } from "react95";
 
 export default function AboutMe(props) {
 
@@ -17,20 +17,20 @@ export default function AboutMe(props) {
     const LABELS = ["React", "NodeJS", ".Net", "PHP", "Databases", "Other"]
     const btnActiveColor = "black"
 
-
-
     return (
         <Grid container>
             <Grid xs={12} md={4} className="btnContainer">
+
                 <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>TECH STACK</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>WHO AM I</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>My Passions</button>
-                <Link to="/page-2/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Thoughts</button></Link >
+                <Link to="/thoughts/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Thoughts</button></Link >
             </Grid>
             <Grid xs={12} md={8} className="infoContainer">
                 <ThemeProvider theme={themes.default}>
                     <div className="win98Container">
                         <Window>
+                            <WindowHeader>aboutkc.exe</WindowHeader>
                             <WindowContent>
                                 <Fieldset label={currIndex === 0 ? "Tech Stack" : currIndex === 1 ? "Who Am I" : "My Passions"}>{Copy.overview[currIndex]}</Fieldset>
                                 {currIndex === 0 ? <Fieldset label={LABELS[currTechIndex]}>
