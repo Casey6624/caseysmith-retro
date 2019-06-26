@@ -663,6 +663,10 @@ pre tt:after {
   display: flex;
 }
 
+.mainBlurb{
+  border-top: #405C72 solid 4px;
+}
+
 @media screen and (max-width: 600px) {
   .emojiContainer{
     display: flex;
