@@ -675,6 +675,22 @@ pre tt:after {
   justify-content: space-between;
 }
 
+.footer{
+  background: #405C72;
+  text-align: center;
+  font-family: 'Bangers', cursive;
+  display: flex;
+  font-size: 2rem;
+  line-height: initial;
+  justify-content: space-evenly;
+  padding: 1rem 1rem 0 1rem;
+}
+
+.emailAddress{
+  text-decoration: none;
+  color: inherit;
+}
+
 .emojiContainer{
   text-align: center;
   display: flex;

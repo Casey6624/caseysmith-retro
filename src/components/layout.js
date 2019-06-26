@@ -9,6 +9,7 @@ import React from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import Footer from "./footer"
 
 import "./layout.css"
 
@@ -33,9 +34,7 @@ const Layout = ({ children }) => {
       <div
       >
         <main>{children}</main>
-        <footer>
-          © {new Date().getFullYear()} Casey Smith
-        </footer>
+        <Footer />
       </div>
     </>
   )
