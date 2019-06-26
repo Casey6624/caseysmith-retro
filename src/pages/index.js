@@ -5,11 +5,13 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import Grid from '@material-ui/core/Grid';
+// components
+import AboutMe from "../components/AboutMe/AboutMe"
 
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Grid container xs={12} className="homeHeader">
+    <Grid container className="homeHeader">
       <Grid item xs={12} md={7} className="headerIntro">
         <div>
           <h1 className="hi">Hi, I'm Casey</h1>
@@ -22,9 +24,9 @@ const IndexPage = () => (
         <h1 className="emojiBlurb"><span role="img">👨‍💻</span></h1>
       </Grid>
     </Grid>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
+    <Grid container class="mainBlurb">
+      <AboutMe />
+    </Grid>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )
