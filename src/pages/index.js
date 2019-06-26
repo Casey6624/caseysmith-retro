@@ -9,23 +9,22 @@ import Grid from '@material-ui/core/Grid';
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Grid>
-      <div className="homeHeader">
-        <div className="headerIntro">
-          <div>
-            <h1>Hi, I'm Casey</h1>
-            <p>Student // Software Developer</p>
-          </div>
+    <Grid container xs={12} className="homeHeader">
+      <Grid item xs={12} md={7} className="headerIntro">
+        <div>
+          <h1 className="hi">Hi, I'm Casey</h1>
+          <p>Student // Software Developer</p>
         </div>
-        <div style={{ textAlign: "center" }}>
-          <h1 className="emojiBlurb"><span role="img">💻</span></h1>
-          <h1 className="emojiBlurb"><span role="img">📱</span></h1>
-        </div>
-      </div>
-      <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-        <Image />
-      </div>
+      </Grid>
+      <Grid item xs={12} md={4} className="emojiContainer">
+        <h1 className="emojiBlurb"><span role="img">💻</span></h1>
+        <h1 className="emojiBlurb"><span role="img">📱</span></h1>
+        <h1 className="emojiBlurb"><span role="img">👨‍💻</span></h1>
+      </Grid>
     </Grid>
+    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
+      <Image />
+    </div>
     <Link to="/page-2/">Go to page 2</Link>
   </Layout>
 )

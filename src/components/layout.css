@@ -627,12 +627,12 @@ pre tt:after {
 
 .homeHeader{
   background-image: url("../images/purplebg.jpg");
-  height: 50vh;
+  height: 80vh;
   background-repeat: no-repeat;
   background-size: cover;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-around;
 }
 
 .homeHeader h1{
@@ -647,6 +647,7 @@ pre tt:after {
   color: white;
   padding: 2rem;
   border-radius: 1rem 1rem 1rem 1rem;
+  line-height: initial;
   font-family: 'Bangers', cursive;
   animation: dropIntroTitle 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
@@ -657,6 +658,16 @@ pre tt:after {
   justify-content: space-between;
 }
 
+.emojiContainer{
+  text-align: center;
+  display: flex;
+}
+
+@media screen and (max-width: 600px) {
+  .emojiContainer{
+    display: flex;
+  }
+}
 
 .emojiBlurb{
   animation: floatEmoji 3s cubic-bezier(0.24, 1.05, 0.4, 1.62) 0s forwards infinite;
@@ -679,6 +690,10 @@ pre tt:after {
 .bm-item.menu-item:hover{
   color: #ffc600;
   animation: heartbeat 1.5s ease-in-out infinite;
+}
+
+.hi{
+  animation: heartbeatSmall 4s ease-in-out infinite;
 }
 
 @keyframes dropIntroTitle {
@@ -712,6 +727,18 @@ pre tt:after {
   }
   45% {
             transform: scale(1);
+            animation-timing-function: ease-out;
+  }
+}
+
+@keyframes heartbeatSmall {
+  from {
+            transform: scale(1);
+            transform-origin: center center;
+            animation-timing-function: ease-out;
+  }
+  45% {
+            transform: scale(0.95);
             animation-timing-function: ease-out;
   }
 }
