@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
 html {
-  font-family: sans-serif;
+  font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
 }
@@ -682,12 +684,6 @@ pre tt:after {
   border-top: #405C72 solid 4px;
 }
 
-@media screen and (max-width: 600px) {
-  .emojiContainer{
-    display: flex;
-  }
-}
-
 .emojiBlurb{
   animation: floatEmoji 3s cubic-bezier(0.24, 1.05, 0.4, 1.62) 0s forwards infinite;
 }
@@ -714,6 +710,18 @@ pre tt:after {
 .hi{
   animation: heartbeatSmall 4s ease-in-out infinite;
 }
+
+.bottomBlurb{
+  display: flex;
+  text-align: center;
+  justify-content: space-evenly;
+  background-image: url("../images/lightbg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+}
+
+/*KEYFRAME ANIMATIONS*/
 
 @keyframes dropIntroTitle {
   0% {

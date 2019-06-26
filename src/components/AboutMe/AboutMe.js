@@ -1,5 +1,5 @@
 import React, { useState, Fragment } from "react"
-
+import { Link } from "gatsby"
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import "./AboutMe.css"
@@ -17,12 +17,15 @@ export default function AboutMe(props) {
     const LABELS = ["React", "NodeJS", ".Net", "PHP", "Databases", "Other"]
     const btnActiveColor = "black"
 
+
+
     return (
         <Grid container>
             <Grid xs={12} md={4} className="btnContainer">
                 <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>TECH STACK</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>WHO AM I</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>My Passions</button>
+                <Link to="/page-2/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Thoughts</button></Link >
             </Grid>
             <Grid xs={12} md={8} className="infoContainer">
                 <ThemeProvider theme={themes.default}>

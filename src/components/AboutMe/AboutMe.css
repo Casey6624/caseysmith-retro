@@ -15,16 +15,18 @@
 .btnAboutMe{
     background: none;
     border: none;
+    text-align: center;
     font-family: 'Bangers', cursive;
     font-size: 3rem;
     line-height: initial;
     padding: 1rem;
-    margin: 0;
+    margin: 0 auto;
     color: white;
 }
 
 .btnAboutMe:hover{
     color: #ffc600;
+    cursor: pointer;
 }
 
 .win98Container{
