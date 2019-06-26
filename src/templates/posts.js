@@ -1,7 +1,7 @@
 import React, { Component } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
-
+import Grid from '@material-ui/core/Grid';
 //Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -16,6 +16,16 @@ class PostsTemplate extends Component {
             <Layout>
                 <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
                 <div className="thoughtsMasterSVGContainer">
+                    <Grid container className="homeHeader">
+                        <Grid item xs={12} md={7} className="headerIntro">
+                            <div>
+                                <h1 className="hi">Stuff I've Written About</h1>
+                            </div>
+                        </Grid>
+                        <Grid item xs={12} md={4} className="emojiContainer">
+                            <h1 className="emojiBlurb"><span role="img">✍️</span></h1>
+                        </Grid>
+                    </Grid>
                 </div>
                 <p
                     style={{
