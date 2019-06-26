@@ -3,6 +3,8 @@ import React, { useState, Fragment } from "react"
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import "./AboutMe.css"
+// copy
+import Copy from "./Copy"
 // React 95 stuff
 import { createGlobalStyle, ThemeProvider } from "styled-components";
 import { reset, themes, List, ListItem, Divider, Fieldset, Window, WindowContent } from "react95";
@@ -10,14 +12,9 @@ import { reset, themes, List, ListItem, Divider, Fieldset, Window, WindowContent
 export default function AboutMe(props) {
 
     const [currIndex, setCurrIndex] = useState(0)
+    const [currTechIndex, setCurrTechIndex] = useState(0)
 
     const btnActiveColor = "black"
-
-    const copy = [
-        "I am a student from Sheffield who loves to make new things. I currently am enrolled at Sheffield Hallam studying a BSc in Computing (Web Development).",
-        "I write 90% of my projects in JavaScript and C#. ",
-        "I am passionate about open source"
-    ]
 
     return (
         <Grid container>
@@ -31,19 +28,19 @@ export default function AboutMe(props) {
                     <div className="win98Container">
                         <Window>
                             <WindowContent>
-                                <Fieldset label={currIndex === 0 ? "Who Am I" : currIndex === 1 ? "Tech Stack" : "My Passions"}>{copy[currIndex]}</Fieldset>
+                                <Fieldset label={currIndex === 0 ? "Who Am I" : currIndex === 1 ? "Tech Stack" : "My Passions"}>{Copy.overview[currIndex]}</Fieldset>
                                 {currIndex === 1 ? <Fieldset>
-                                    Woooo
+                                    {Copy.moreInfo[currTechIndex]}
                                 </Fieldset> : null}
                             </WindowContent>
                         </Window>
                         {currIndex === 1 ? <List>
-                            <ListItem>🤗 React</ListItem>
-                            <ListItem>😃 Node</ListItem>
-                            <ListItem>🙂 PHP</ListItem>
-                            <ListItem>🤔 .Net</ListItem>
-                            <ListItem>💾 Databases</ListItem>
-                            <ListItem>💃🏻 Other</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(0)}>🤗 React</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(1)}>😃 NodeJS</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(2)}>🙂 .Net</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(3)}>🤔 PHP</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(4)}>💾 Databases</ListItem>
+                            <ListItem onClick={() => setCurrTechIndex(5)}>💃🏻 Other</ListItem>
                             <Divider />
                             <ListItem disabled>😴 Angular</ListItem>
                         </List> : null}
