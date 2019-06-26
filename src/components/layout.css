@@ -637,6 +637,11 @@ pre tt:after {
   position: fixed;
 }
 
+#githubLogo, #twitterLogo{
+  animation: rotate360 15s ease-in-out infinite forwards;
+  animation-delay: 5s;
+}
+
 #githubLogo:hover, #twitterLogo:hover{
   fill: white;
   cursor: pointer;
@@ -666,7 +671,7 @@ pre tt:after {
   border-radius: 1rem 1rem 1rem 1rem;
   line-height: initial;
   font-family: 'Bangers', cursive;
-  animation: dropIntroTitle 0.3s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
+  animation: dropIntroTitle 1s cubic-bezier(0.470, 0.000, 0.745, 0.715) both;
 }
 
 .headerIntro{
@@ -679,16 +684,19 @@ pre tt:after {
   background: #405C72;
   text-align: center;
   font-family: 'Bangers', cursive;
-  display: flex;
-  font-size: 2rem;
+  font-size: 1.5rem;
   line-height: initial;
-  justify-content: space-evenly;
   padding: 1rem 1rem 0 1rem;
 }
 
 .emailAddress{
+  font-size: 2rem;
   text-decoration: none;
   color: inherit;
+}
+
+.emailAddress:hover{
+  color: white;
 }
 
 .emojiContainer{
@@ -775,15 +783,9 @@ pre tt:after {
 }
 
 @keyframes heartbeatSmall {
-  from {
-            transform: scale(1);
-            transform-origin: center center;
-            animation-timing-function: ease-out;
-  }
-  45% {
-            transform: scale(0.95);
-            animation-timing-function: ease-out;
-  }
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
 }
 
 
@@ -796,5 +798,14 @@ pre tt:after {
   }
   100% {
             transform: scale(1);
+  }
+}
+
+@keyframes rotate360 {
+  0%, 10% {
+    transform:rotate(0deg);
+  }
+  90%, 100%{
+    transform:rotate(360deg);
   }
 }

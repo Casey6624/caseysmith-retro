@@ -41,4 +41,14 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  {
+  resolve: `gatsby-source-wordpress`,
+    options: {
+    baseUrl: `caseysmith.co.uk/API`,
+      protocol: "https",
+        hostingWPCOM: false,
+          useACF: true,
+            verboseOutput: true
+  },
+},
 }
