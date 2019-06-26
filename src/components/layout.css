@@ -744,6 +744,23 @@ pre tt:after {
   font-family: 'Roboto', sans-serif;
 }
 
+/*THOUGHTS PAGE*/
+
+.postList{
+  flex-flow: row wrap;
+    display: flex;
+    justify-content: flex-start;
+    min-height: 100%;
+    height: auto;
+    margin: 2rem;
+}
+
+.card{
+  margin: 1rem;
+  font-family: 'Roboto', sans-serif;
+}
+
+
 /*KEYFRAME ANIMATIONS*/
 
 @keyframes dropIntroTitle {
