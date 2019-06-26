@@ -625,6 +625,21 @@ pre tt:after {
 /* CUSTOM CSS */
 @import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Shade&display=swap');
 
+.socialIcons{
+  right: 36px;
+  top: 36px;
+  z-index: 1000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+}
+
+#githubLogo:hover, #twitterLogo:hover{
+  fill: white;
+  cursor: pointer;
+}
+
 .homeHeader{
   background-image: url("../images/purplebg.jpg");
   height: 80vh;

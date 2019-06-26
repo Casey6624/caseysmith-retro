@@ -1,26 +1,30 @@
 import { Link } from 'gatsby'
 import React, { Component } from 'react'
 import { slide as Menu } from "react-burger-menu";
+// components
+import Icons from "./Icons/Icons"
 
-class Header extends Component {
+export default function Header(props) {
 
-  render() {
-    return (
-      <div className="MenuMasterContainer">
-        <div>
-          <Menu left styles={styles}>
-            <a id="home" className="menu-item" href="/">HOME</a><br />
-            <a id="about" className="menu-item" href="/thoughts">THOUGHTS</a><br />
-            <a id="contact" className="menu-item" href="/contact">CONTACT</a>
-          </Menu>
+  const GITHUB_URL = "https://github.com/Casey6624"
+  const TWITTER_URL = "https://twitter.com/CaseyKCSmith"
+
+  return (
+    <div className="MenuMasterContainer">
+      <div>
+        <Menu left styles={styles}>
+          <a id="home" className="menu-item" href="/">HOME</a><br />
+          <a id="about" className="menu-item" href="/thoughts">THOUGHTS</a><br />
+          <a id="contact" className="menu-item" href="/contact">CONTACT</a>
+        </Menu>
+        <div className="socialIcons">
+          <p id="githubLogo" onClick={() => window.open(GITHUB_URL)}>{Icons.Github}</p>
+          <p id="twitterLogo" onClick={() => window.open(TWITTER_URL)}>{Icons.Twitter}</p>
         </div>
       </div>
+    </div >
 
-    )
-
-  }
-
-
+  )
 }
 let highlightColor = "#ffc600"
 
@@ -64,5 +68,3 @@ let styles = {
     background: 'rgba(0, 0, 0, 0.5)'
   }
 }
-
-export default Header
