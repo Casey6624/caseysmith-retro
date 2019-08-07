@@ -7,6 +7,8 @@ import DateRange from '@material-ui/icons/DateRange';
 //Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
+import Button from '@material-ui/core/Button';
+import Arrow from '@material-ui/icons/KeyboardArrowLeft';
 
 export default function PostsTemplate({ data }) {
 
@@ -26,6 +28,11 @@ export default function PostsTemplate({ data }) {
                     </Grid>
                 </Grid>
             </div>
+            <Link style={{textDecoration: "none"}} to="/">
+                    <Button color="secondary">
+                    <Arrow /> GO BACK
+                    </Button>
+                </Link>
             <p
                 className="postsFoundText"
             >{data.allWordpressPost.edges.length} POSTS FOUND</p>

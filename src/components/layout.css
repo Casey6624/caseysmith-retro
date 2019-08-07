@@ -731,7 +731,7 @@ pre tt:after {
 }
 
 .hi{
-  font-size: 4rem;
+  font-size: 3rem;
   animation: heartbeatSmall 4s ease-in-out infinite;
 }
 
