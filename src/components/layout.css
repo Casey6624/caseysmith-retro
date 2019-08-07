@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
-
+@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Shade&display=swap');
 html {
   font-family: 'Roboto', sans-serif;
   -ms-text-size-adjust: 100%;
@@ -625,7 +625,7 @@ pre tt:after {
 
 
 /* CUSTOM CSS */
-@import url('https://fonts.googleapis.com/css?family=Bangers|Bungee+Shade&display=swap');
+
 
 .socialIcons{
   right: 36px;
@@ -642,7 +642,7 @@ pre tt:after {
 }
 
 #githubLogo:hover, #twitterLogo:hover{
-  fill: white;
+  fill: #463C5E;
   cursor: pointer;
 }
 
@@ -731,6 +731,7 @@ pre tt:after {
 }
 
 .hi{
+  font-size: 4rem;
   animation: heartbeatSmall 4s ease-in-out infinite;
 }
 
@@ -755,20 +756,60 @@ pre tt:after {
     margin: 2rem;
 }
 
+#post{
+  text-decoration: none;
+}
+
+.dateContainer{
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem;
+  color: black;
+}
+
+.postsFoundText{
+  font-family: Bangers,cursive;
+    text-align: center;
+    font-size: 2rem;
+    margin: 1rem 0 0;
+}
+.wpPostTitle{
+  font-family: Roboto,sans-serif;
+    font-size: 2rem;
+}
 .card{
   margin: 1rem;
+  padding: 1rem;
   font-family: 'Roboto', sans-serif;
 }
 
+.card:hover{
+  background: #f2f2f2;
+}
+
+.card a{
+  text-decoration: none;
+  color: black;
+}
+
 .postContainer{
+  margin: 1rem 2rem;
+}
+
+.paraText p{
+  font-family: 'Roboto', sans-serif;
+}
+
+.postContent{
   max-width: 1500px;
   font-family: Roboto,sans-serif;
   margin: 0 auto;
 }
 
-.postContent{
-  margin-left: 15px;
-  margin-right: 15px;
+.featuredWPImage, .featuredWPImage img{
+  max-width: 100%;
+  padding: 0;
+  margin: 0 0 1.45rem;
 }
 
 .postContent img, .wp-block-image {

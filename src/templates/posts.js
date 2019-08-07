@@ -3,7 +3,7 @@ import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import TextField from '@material-ui/core/TextField';
+import DateRange from '@material-ui/icons/DateRange';
 //Components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
@@ -27,16 +27,17 @@ export default function PostsTemplate({ data }) {
                 </Grid>
             </div>
             <p
-                style={{
-                    textAlign: "center",
-                }}
+                className="postsFoundText"
             >{data.allWordpressPost.edges.length} POSTS FOUND</p>
             <div className="postList">
                 <Grid container>
                     {data.allWordpressPost.edges.map(({ node }) => (<Grid xs={12} md={4}>
                         <Card key={node.slug} className="card" id="post">
                             <Link to={'thought/' + node.slug}>
-                                <p id="wpPostDate">{node.date}</p>
+                                <div className="dateContainer">
+                                    <DateRange />
+                                    <p id="wpPostDate">{node.date}</p>
+                                </div>
                                 <h3 className="wpPostTitle">{node.title}</h3>
 
                                 <div className="paraText" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
