@@ -2,6 +2,9 @@ import React, { Component } from "react"
 import Layout from '../components/layout'
 import { Link } from 'gatsby'
 import { graphql } from "gatsby";
+import Grid from '@material-ui/core/Grid';
+import Button from '@material-ui/core/Button';
+import Arrow from '@material-ui/icons/KeyboardArrowLeft';
 
 class PostTemplate extends Component {
     render() {
@@ -9,15 +12,20 @@ class PostTemplate extends Component {
 
         return (
             <Layout>
-                <Link
-                    style={{
-                        display: "flex",
-                        justifyContent: "flex-end",
-                        textDecoration: "none",
-                        margin: "15px"
-                    }}
-                    to="/thoughts/">
-                    <button className="backButton">GO BACK</button>
+                <Grid container className="homeHeader">
+                    <Grid item xs={12} md={7} className="headerIntro">
+                        <div>
+                            <h1 className="hi" dangerouslySetInnerHTML={{ __html: post.title }}></h1>
+                        </div>
+                        <div class="emojiBlurb">
+                        <span>🤔</span>
+                        </div>
+                    </Grid>
+                </Grid>
+                <Link style={{textDecoration: "none"}} to="/thoughts/">
+                    <Button color="secondary">
+                    <Arrow /> GO BACK
+                    </Button>
                 </Link>
                 <div
                     style={{
@@ -31,17 +39,10 @@ class PostTemplate extends Component {
                             marginRight: "15px"
                         }}
                         className="postContent">
-                        <h1
-                            style={{
-                                textAlign: "center",
-                                fontWeight: "bold",
-                                margin: "15px",
-                            }}
-                            dangerouslySetInnerHTML={{ __html: post.title }} />
                         <div
                             style={{
                                 width: "100%",
-                                height: "auto"
+                                height: "auto",
                             }}
                             className="paraText" dangerouslySetInnerHTML={{ __html: post.content }} />
                     </div>
