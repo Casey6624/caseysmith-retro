@@ -656,6 +656,27 @@ pre tt:after {
   justify-content: space-around;
 }
 
+@media only screen and (max-width: 1200px) {
+  .homeHeader {
+    display: grid;
+    text-align: center;
+  }
+  .emojiBlurbSmol{
+    display: flex !important;
+    text-align: center;
+    margin: 0 auto;
+    animation: floatEmoji 3s cubic-bezier(0.24, 1.05, 0.4, 1.62) 0s forwards infinite;
+    justify-content: center;
+  }
+  .emojiBlurb{
+    display: none;
+  }
+}
+
+.emojiBlurbSmol{
+  display: none;
+}
+
 .homeHeader h1{
   font-family: 'Bungee Shade', cursive;
   color: white;

@@ -10,19 +10,22 @@ import AboutMe from "../components/AboutMe/AboutMe"
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
-    <Grid container className="homeHeader">
+    <div container className="homeHeader">
       <Grid item xs={12} md={7} className="headerIntro">
         <div>
           <h1 className="hi">Hi, I'm Casey</h1>
           <p>Student // Software Developer</p>
         </div>
       </Grid>
-      <Grid item xs={12} md={4} className="emojiContainer">
+      <Grid item xs={12} md={4} sm={2} className="emojiContainer">
         <h1 className="emojiBlurb"><span role="img">💻</span></h1>
         <h1 className="emojiBlurb"><span role="img">📱</span></h1>
         <h1 className="emojiBlurb"><span role="img">👨‍💻</span></h1>
+        <h2 className="emojiBlurbSmol"><span role="img">💻</span></h2>
+        <h2 className="emojiBlurbSmol"><span role="img">📱</span></h2>
+        <h2 className="emojiBlurbSmol"><span role="img">👨‍💻</span></h2>
       </Grid>
-    </Grid>
+    </div>
     <Grid container class="mainBlurb">
       <AboutMe />
     </Grid>
