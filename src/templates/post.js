@@ -24,7 +24,7 @@ class PostTemplate extends Component {
                 </Grid>
                 <Link style={{textDecoration: "none"}} to="/thoughts/">
                     <Button color="secondary">
-                    <Arrow /> GO BACK
+                    <Arrow /> BACK TO POSTS
                     </Button>
                 </Link>
                 <div

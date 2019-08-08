@@ -21,7 +21,7 @@ export default function PostsHeader(){
     </div>
     <Link style={{textDecoration: "none"}} to="/">
             <Button color="secondary">
-            <Arrow /> GO BACK
+            <Arrow /> BACK TO HOME
             </Button>
     </Link>
         </Fragment>
