@@ -705,6 +705,7 @@ pre tt:after {
   display: flex;
   justify-content: center;
   align-items: flex-end;
+  text-align: center;
 }
 
 @media only screen and (max-width: 400px) {

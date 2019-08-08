@@ -40,61 +40,67 @@ export default function PostsTemplate({ data }) {
                 <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
                 <PostsHeader/>
                 <div className="categoryFilterContainer">
-                <Chip
-                icon={<LibraryBooks style={{fontSize: 20}} />}
-                label="View All"
-                className="slightMarg"
-                color="secondary"
-                clickable
-                onClick={e => handleFilterChange(e)}
-                variant="outlined"
-                />
-                <Chip
-                icon={Icons.NodeJS}
-                label="NodeJS"
-                color="secondary"
-                clickable
-                variant="outlined"
-                onClick={e => handleFilterChange(e)}
-                className="slightMarg"
-                />
-                <Chip
-                icon={Icons.ReactJS}
-                className="slightMarg"
-                label="ReactJS"
-                color="secondary"
-                clickable
-                onClick={e => handleFilterChange(e)}
-                variant="outlined"
-                />
-                <Chip
-                icon={Icons.Hosting}
-                label="Hosting"
-                className="slightMarg"
-                color="secondary"
-                clickable
-                onClick={e => handleFilterChange(e)}
-                variant="outlined"
-                />
-                <Chip
-                icon={Icons.WordPress}
-                label="WordPress"
-                className="slightMarg"
-                color="secondary"
-                clickable
-                onClick={e => handleFilterChange(e)}
-                variant="outlined"
-                />
-                <Chip
-                icon={Icons.StoryTime}
-                label="Story Time"
-                className="slightMarg"
-                color="secondary"
-                clickable
-                onClick={e => handleFilterChange(e)}
-                variant="outlined"
-                />
-                </div>
+            <div>
+            <Chip
+            icon={<LibraryBooks style={{fontSize: 20}} />}
+            label="View All"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            <Chip
+            icon={Icons.NodeJS}
+            label="NodeJS"
+            color="secondary"
+            clickable
+            variant="outlined"
+            onClick={e => handleFilterChange(e)}
+            className="slightMarg"
+            />
+            </div>
+            <div>
+            <Chip
+            icon={Icons.ReactJS}
+            className="slightMarg"
+            label="ReactJS"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            <Chip
+            icon={Icons.Hosting}
+            label="Hosting"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            </div>
+            <div>
+            <Chip
+            icon={Icons.WordPress}
+            label="WordPress"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            <Chip
+            icon={Icons.StoryTime}
+            label="Story Time"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            </div>
+            </div>
     
                 <p className="postsFoundText"> {filter} POSTS</p>
                 <div className="postList">
