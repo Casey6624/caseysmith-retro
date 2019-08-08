@@ -1,4 +1,4 @@
-import React, { useState } from "react"
+import React, { useState, useEffect } from "react"
 import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import Grid from '@material-ui/core/Grid';
@@ -16,15 +16,23 @@ export default function PostsTemplate({ data }) {
 
     const [filter, setFilter] = useState("ALL")
 
+    const [filteredPosts, setFilteredPosts] = useState([])
+
     function handleFilterChange({ target }){
         if(target.tagName !== "SPAN")return
-        console.log(target.tagName)
         if(target.innerHTML === "View All"){
             setFilter("ALL")
             return
         }
         setFilter(target.innerHTML)
     }
+
+    useEffect(() => {
+        const finishedFilter = data.allWordpressPost.edges.filter(({ node }) => {
+            return node.categories[0].name === filter
+        })
+        setFilteredPosts(finishedFilter)
+    }, [data, filter])
 
     if(filter !== "ALL"){
         return (
@@ -77,12 +85,21 @@ export default function PostsTemplate({ data }) {
                 onClick={e => handleFilterChange(e)}
                 variant="outlined"
                 />
+                <Chip
+                icon={Icons.StoryTime}
+                label="Story Time"
+                className="slightMarg"
+                color="secondary"
+                clickable
+                onClick={e => handleFilterChange(e)}
+                variant="outlined"
+                />
                 </div>
     
                 <p className="postsFoundText"> {filter} POSTS</p>
                 <div className="postList">
                     <Grid container>
-                        {data.allWordpressPost.edges.map(({ node }) => (<Grid xs={12} md={4}>
+                        {filteredPosts.map(({ node }) => (<Grid xs={12} md={4}>
                             <Card key={node.slug} className="card" id="post">
                                 <Link to={'thought/' + node.slug}>
                                     <div className="dateContainer">
@@ -110,6 +127,7 @@ export default function PostsTemplate({ data }) {
             <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
             <PostsHeader/>
             <div className="categoryFilterContainer">
+            <div>
             <Chip
             icon={<LibraryBooks style={{fontSize: 20}} />}
             label="View All"
@@ -128,6 +146,8 @@ export default function PostsTemplate({ data }) {
             onClick={e => handleFilterChange(e)}
             className="slightMarg"
             />
+            </div>
+            <div>
             <Chip
             icon={Icons.ReactJS}
             className="slightMarg"
@@ -146,6 +166,8 @@ export default function PostsTemplate({ data }) {
             onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </div>
+            <div>
             <Chip
             icon={Icons.WordPress}
             label="WordPress"
@@ -155,6 +177,16 @@ export default function PostsTemplate({ data }) {
             onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            <Chip
+            icon={Icons.StoryTime}
+            label="Story Time"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            onClick={e => handleFilterChange(e)}
+            variant="outlined"
+            />
+            </div>
             </div>
 
             <p className="postsFoundText"> {filter} POSTS</p>

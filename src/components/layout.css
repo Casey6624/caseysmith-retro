@@ -707,6 +707,12 @@ pre tt:after {
   align-items: flex-end;
 }
 
+@media only screen and (max-width: 400px) {
+  .slightMarg{
+    margin: 0.2rem !important;
+  }
+}
+
 .slightMarg{
   margin: 1rem;
 }
