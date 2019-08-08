@@ -704,6 +704,7 @@ pre tt:after {
 .categoryFilterContainer{
   display: flex;
   justify-content: center;
+  align-items: flex-end;
 }
 
 .slightMarg{
