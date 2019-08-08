@@ -29,7 +29,11 @@ export default function PostsTemplate({ data }) {
 
     useEffect(() => {
         const finishedFilter = data.allWordpressPost.edges.filter(({ node }) => {
-            return node.categories[0].name === filter
+            for(let i = 0; i < node.categories.length; i++){
+                if(node.categories[i].name === filter){
+                    return node.categories[i].name === filter
+                }
+            }
         })
         setFilteredPosts(finishedFilter)
     }, [data, filter])
