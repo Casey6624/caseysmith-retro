@@ -3,12 +3,13 @@ import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
+import Chip from '@material-ui/core/Chip';
 import DateRange from '@material-ui/icons/DateRange';
 //Components
 import Layout from "../components/layout";
+import Icons from "../components/Icons/Icons"
 import SEO from "../components/seo";
-import Button from '@material-ui/core/Button';
-import Arrow from '@material-ui/icons/KeyboardArrowLeft';
+import PostsHeader from "./PostsHeader"
 
 export default function PostsTemplate({ data }) {
 
@@ -16,24 +17,45 @@ export default function PostsTemplate({ data }) {
 
         <Layout>
             <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
-            <div className="thoughtsMasterSVGContainer">
-                <Grid container className="homeHeader">
-                    <Grid item xs={12} md={7} sm={12} className="headerIntro">
-                            <h1 className="hi">Stuff I've Written About</h1>
-                    </Grid>
-                    <Grid item xs={12} md={4} sm={12} className="emojiContainer">
-                        <h1 className="emojiBlurb"><span role="img">✍️</span></h1>
-                    </Grid>
-                </Grid>
+            <PostsHeader/>
+
+            <div className="categoryFilterContainer">
+            <h3 className="postsFoundText">Filter: </h3>
+            <Chip
+            icon={Icons.NodeJS}
+            label="NodeJS"
+            color="secondary"
+            clickable
+            variant="outlined"
+            className="slightMarg"
+            />
+            <Chip
+            icon={Icons.ReactJS}
+            className="slightMarg"
+            label="ReactJS"
+            color="secondary"
+            clickable
+            variant="outlined"
+            />
+            <Chip
+            icon={Icons.Hosting}
+            label="Hosting"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            variant="outlined"
+            />
+            <Chip
+            icon={Icons.WordPress}
+            label="WordPress"
+            className="slightMarg"
+            color="secondary"
+            clickable
+            variant="outlined"
+            />
             </div>
-            <Link style={{textDecoration: "none"}} to="/">
-                    <Button color="secondary">
-                    <Arrow /> GO BACK
-                    </Button>
-                </Link>
-            <p
-                className="postsFoundText"
-            >{data.allWordpressPost.edges.length} POSTS FOUND</p>
+
+            <p className="postsFoundText">{data.allWordpressPost.edges.length} POSTS FOUND</p>
             <div className="postList">
                 <Grid container>
                     {data.allWordpressPost.edges.map(({ node }) => (<Grid xs={12} md={4}>
@@ -72,6 +94,9 @@ query postsQuery{
                 title
                 excerpt
                 slug
+              categories {
+                name
+              }
                 date(formatString: "MMMM DD, YYYY")
               featured_media {
                   source_url

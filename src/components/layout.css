@@ -701,6 +701,15 @@ pre tt:after {
   font-size: 5rem;
 }
 
+.categoryFilterContainer{
+  display: flex;
+  justify-content: center;
+}
+
+.slightMarg{
+  margin: 1rem;
+}
+
 .homeHeader p{
   font-size: 3rem;
   background: #405C72;
@@ -802,7 +811,6 @@ pre tt:after {
 .dateContainer{
   display: flex;
   justify-content: space-between;
-  margin: 1rem;
   color: black;
 }
 
