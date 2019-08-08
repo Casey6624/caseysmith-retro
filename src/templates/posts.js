@@ -18,12 +18,10 @@ export default function PostsTemplate({ data }) {
             <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
             <div className="thoughtsMasterSVGContainer">
                 <Grid container className="homeHeader">
-                    <Grid item xs={12} md={7} className="headerIntro">
-                        <div>
+                    <Grid item xs={12} md={7} sm={12} className="headerIntro">
                             <h1 className="hi">Stuff I've Written About</h1>
-                        </div>
                     </Grid>
-                    <Grid item xs={12} md={4} className="emojiContainer">
+                    <Grid item xs={12} md={4} sm={12} className="emojiContainer">
                         <h1 className="emojiBlurb"><span role="img">✍️</span></h1>
                     </Grid>
                 </Grid>

@@ -673,6 +673,24 @@ pre tt:after {
   }
 }
 
+@media only screen and (max-width: 900px) {
+  .thoughtsMasterSVGContainer{
+    display: block;
+  }
+  .hi{
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 520px) {
+  .homeHeader h1{
+    font-size: 2rem !important;
+  }
+  .homeHeader{
+    display: block;
+  }
+}
+
 .emojiBlurbSmol{
   display: none;
 }
@@ -752,7 +770,7 @@ pre tt:after {
 }
 
 .hi{
-  font-size: 3rem;
+  font-size: 2rem;
   animation: heartbeatSmall 4s ease-in-out infinite;
 }
 
