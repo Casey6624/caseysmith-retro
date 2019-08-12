@@ -655,6 +655,9 @@ pre tt:after {
   align-items: center;
   justify-content: space-around;
 }
+.homeHeader{
+  padding-top: 8rem;
+}
 
 @media only screen and (max-width: 1200px) {
   .homeHeader {
@@ -691,8 +694,10 @@ pre tt:after {
 
   .postHeader{
     font-size: 2rem !important;
-    word-break: break-all;
     margin: 1rem;
+    -webkit-hyphens: auto;
+    -moz-hyphens: auto;
+         hyphens: auto;
   }
 }
 
@@ -716,6 +721,11 @@ pre tt:after {
   .emojiBlurb span{
     font-size: 3rem !important;
   }
+}
+@media only screen and (max-width: 1169px) {
+.headerIntro{
+  display: block !important;
+}
 }
 
 .slightMarg{
