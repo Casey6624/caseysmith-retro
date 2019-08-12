@@ -15,7 +15,7 @@ class PostTemplate extends Component {
                 <Grid container className="homeHeader">
                     <Grid item xs={12} md={7} className="headerIntro">
                         <div>
-                            <h1 className="hi" dangerouslySetInnerHTML={{ __html: post.title }}></h1>
+                            <h1 className="postHeader" dangerouslySetInnerHTML={{ __html: post.title }}></h1>
                         </div>
                         <div class="emojiBlurb">
                         <span>🤔</span>

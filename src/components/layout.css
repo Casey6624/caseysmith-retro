@@ -646,7 +646,7 @@ pre tt:after {
   cursor: pointer;
 }
 
-.homeHeader{
+.homeHeader, .postsHeaderContainer{
   background-image: url("../images/purplebg.jpg");
   height: 80vh;
   background-repeat: no-repeat;
@@ -661,15 +661,14 @@ pre tt:after {
     display: grid;
     text-align: center;
   }
-  .emojiBlurbSmol{
+  .emojiBlurb{
     display: flex !important;
     text-align: center;
     margin: 0 auto;
+    font-size: 0.5rem;
+    margin-bottom: 1rem;
     animation: floatEmoji 3s cubic-bezier(0.24, 1.05, 0.4, 1.62) 0s forwards infinite;
     justify-content: center;
-  }
-  .emojiBlurb{
-    display: none;
   }
 }
 
@@ -677,25 +676,27 @@ pre tt:after {
   .thoughtsMasterSVGContainer{
     display: block;
   }
-  .hi{
-    font-size: 3rem;
-  }
 }
 
 @media only screen and (max-width: 520px) {
-  .homeHeader h1{
-    font-size: 2rem !important;
-  }
   .homeHeader{
     display: block;
+    height: auto;
+  }
+
+  .postsHeader{
+    font-size: 3rem !important;
+    margin: 1rem;
+  }
+
+  .postHeader{
+    font-size: 2rem !important;
+    word-break: break-all;
+    margin: 1rem;
   }
 }
 
-.emojiBlurbSmol{
-  display: none;
-}
-
-.homeHeader h1{
+.homeHeader h1, .postsHeader{
   font-family: 'Bungee Shade', cursive;
   color: white;
   font-size: 5rem;
@@ -711,6 +712,9 @@ pre tt:after {
 @media only screen and (max-width: 400px) {
   .slightMarg{
     margin: 0.2rem !important;
+  }
+  .emojiBlurb span{
+    font-size: 3rem !important;
   }
 }
 

@@ -21,9 +21,6 @@ const IndexPage = () => (
         <h1 className="emojiBlurb"><span role="img">💻</span></h1>
         <h1 className="emojiBlurb"><span role="img">📱</span></h1>
         <h1 className="emojiBlurb"><span role="img">👨‍💻</span></h1>
-        <h2 className="emojiBlurbSmol"><span role="img">💻</span></h2>
-        <h2 className="emojiBlurbSmol"><span role="img">📱</span></h2>
-        <h2 className="emojiBlurbSmol"><span role="img">👨‍💻</span></h2>
       </Grid>
     </div>
     <Grid container class="mainBlurb">
