@@ -1,9 +1,6 @@
-import { useEffect } from 'react';
-import { navigate } from 'gatsby';
+import React from 'react'
+import { Redirect } from '@reach/router'
 
-export default () => {
-  useEffect(() => {
-    navigate('/');
-  }, []);
-  return null;
-};
+const NotFoundPage = () => <Redirect to="/" />
+
+export default NotFoundPage
