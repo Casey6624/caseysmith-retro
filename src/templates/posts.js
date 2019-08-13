@@ -4,6 +4,11 @@ import PropTypes from "prop-types"
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
 import Chip from '@material-ui/core/Chip';
+import TextField from '@material-ui/core/TextField';
+import Button from '@material-ui/core/Button';
+import InputAdornment from '@material-ui/core/InputAdornment';
+import Email from '@material-ui/icons/Email';
+import Send from '@material-ui/icons/Send';
 import DateRange from '@material-ui/icons/DateRange';
 import LibraryBooks from '@material-ui/icons/LibraryBooks'
 //Components
@@ -217,6 +222,30 @@ export default function PostsTemplate({ data }) {
                         </Card>
                     </Grid>
                     ))}
+                   <Card className="card" id="post">
+                    <div className="dateContainer">
+                                    <Email />
+                                    <p id="wpPostDate"> Monthly Newsletter</p>
+                                </div>
+                              <h3 className="wpPostTitle">Join My Mailing List!</h3>             
+                            <div style={{ display: "flex" }}>
+                            <TextField
+                                id="mce-EMAIL"
+                                label="Emai"
+                                name="EMAIL" 
+                                placeholder="Your Email Address" 
+                                required
+                                className="email"
+                            />
+                                <Button 
+                                defaultValue="Subscribe" 
+                                name="subscribe"
+                                color="secondary"
+                                id="mc-embedded-subscribe"
+                                type="submit"
+                                ><Send/></Button>
+                            </div>
+                            </Card>
                 </Grid>
             </div>
         </Layout>
