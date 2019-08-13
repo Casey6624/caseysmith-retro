@@ -219,7 +219,6 @@ export default function PostsTemplate({ data }) {
                     ))}
                 </Grid>
             </div>
-
         </Layout>
     )
 }

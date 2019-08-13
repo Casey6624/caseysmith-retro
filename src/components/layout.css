@@ -886,6 +886,22 @@ pre tt:after {
   text-align: center;
 }
 
+.mc_embed_signup_scroll{
+ display: flex !important;
+}
+
+#signUpPls{
+  font-family: Roboto,sans-serif;
+}
+
+.mc-embedded-subscribe{
+  font-family: Roboto,sans-serif;
+}
+
+.signupCard{
+  margin-top: 2rem;
+  padding: 1rem;
+}
 
 /*KEYFRAME ANIMATIONS*/
 
