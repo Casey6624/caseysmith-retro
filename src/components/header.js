@@ -36,9 +36,9 @@ export default function Header(props) {
                             <div style={{ display: "flex" }}>
                             <TextField
                                 id="mce-EMAIL"
-                                label="Emai"
+                                label="Your Email Address"
                                 name="EMAIL" 
-                                placeholder="Your Email Address" 
+                                placeholder="Example@123.com" 
                                 required
                                 className="email"
                                 InputProps={{

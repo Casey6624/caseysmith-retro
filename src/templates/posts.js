@@ -231,7 +231,7 @@ export default function PostsTemplate({ data }) {
                             <div style={{ display: "flex" }}>
                             <TextField
                                 id="mce-EMAIL"
-                                label="Emai"
+                                label="Your Email Address"
                                 name="EMAIL" 
                                 placeholder="Your Email Address" 
                                 required
