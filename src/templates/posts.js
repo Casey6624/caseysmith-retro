@@ -6,8 +6,8 @@ import Card from '@material-ui/core/Card';
 import Chip from '@material-ui/core/Chip';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
-import InputAdornment from '@material-ui/core/InputAdornment';
 import Email from '@material-ui/icons/Email';
+import AccessTime from '@material-ui/icons/AccessTime';
 import Send from '@material-ui/icons/Send';
 import DateRange from '@material-ui/icons/DateRange';
 import LibraryBooks from '@material-ui/icons/LibraryBooks'
@@ -30,6 +30,19 @@ export default function PostsTemplate({ data }) {
             return
         }
         setFilter(target.innerHTML)
+    }
+
+    function stripHTML(rawContent) {
+        return new DOMParser()
+            .parseFromString(rawContent, 'text/html')
+            .body
+            .textContent
+            .trim()
+    }
+
+    function generateReadingTimes(content){
+        const data = stripHTML(content)
+        return Math.floor(data.split(" ").length / 300)
     }
 
     useEffect(() => {
@@ -114,7 +127,7 @@ export default function PostsTemplate({ data }) {
                 <p className="postsFoundText"> {filter} POSTS</p>
                 <div className="postList">
                     <Grid container>
-                        {filteredPosts.map(({ node }) => (<Grid xs={12} md={4}>
+                        {filteredPosts.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
                             <Card key={node.slug} className="card" id="post">
                                 <Link to={'thought/' + node.slug}>
                                     <div className="dateContainer">
@@ -207,7 +220,7 @@ export default function PostsTemplate({ data }) {
             <p className="postsFoundText"> {filter} POSTS</p>
             <div className="postList">
                 <Grid container>
-                    {data.allWordpressPost.edges.map(({ node }) => (<Grid xs={12} md={4}>
+                    {data.allWordpressPost.edges.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
                         <Card key={node.slug} className="card" id="post">
                             <Link to={'thought/' + node.slug}>
                                 <div className="dateContainer">
@@ -218,10 +231,12 @@ export default function PostsTemplate({ data }) {
 
                                 <div className="paraText" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                 <img className="featuredWPImage" alt={node.title} src={node.featured_media.source_url} />
+                                <div className="timeToRead"> <p><AccessTime /></p> <p>{generateReadingTimes(node.content)} Minute Read</p></div>
                             </Link>
                         </Card>
                     </Grid>
                     ))}
+
                    <Card className="card" id="post">
                     <div className="dateContainer">
                                     <Email />
@@ -231,9 +246,9 @@ export default function PostsTemplate({ data }) {
                             <div style={{ display: "flex" }}>
                             <TextField
                                 id="mce-EMAIL"
-                                label="Your Email Address"
+                                label="Email Address"
                                 name="EMAIL" 
-                                placeholder="Your Email Address" 
+                                placeholder="Bob@test.com" 
                                 required
                                 className="email"
                             />
@@ -266,6 +281,7 @@ query postsQuery{
                 title
                 excerpt
                 slug
+              	content
               categories {
                 name
               }
