@@ -16,6 +16,8 @@ import Layout from "../components/layout";
 import Icons from "../components/Icons/Icons"
 import SEO from "../components/seo";
 import PostsHeader from "./PostsHeader"
+// Libraries
+const striptags = require('striptags');
 
 export default function PostsTemplate({ data }) {
 
@@ -32,16 +34,8 @@ export default function PostsTemplate({ data }) {
         setFilter(target.innerHTML)
     }
 
-    function stripHTML(rawContent) {
-        return new DOMParser()
-            .parseFromString(rawContent, 'text/html')
-            .body
-            .textContent
-            .trim()
-    }
-
     function generateReadingTimes(content){
-        const data = stripHTML(content)
+        const data = striptags(content)
         return Math.floor(data.split(" ").length / 300)
     }
 
