@@ -132,6 +132,7 @@ export default function PostsTemplate({ data }) {
     
                                     <div className="paraText" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                     <img className="featuredWPImage" alt={node.title} src={node.featured_media.source_url} />
+                                    <div className="timeToRead"> <p><AccessTime /></p> <p>{generateReadingTimes(node.content)} Minute Read</p></div>
                                 </Link>
                             </Card>
                         </Grid>
