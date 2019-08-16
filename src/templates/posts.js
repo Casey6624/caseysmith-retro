@@ -25,15 +25,6 @@ export default function PostsTemplate({ data }) {
 
     const [filteredPosts, setFilteredPosts] = useState([])
 
-    function handleFilterChange({ target }){
-        if(target.tagName !== "SPAN")return
-        if(target.innerHTML === "View All"){
-            setFilter("ALL")
-            return
-        }
-        setFilter(target.innerHTML)
-    }
-
     function generateReadingTimes(content){
         const data = striptags(content)
         return Math.floor(data.split(" ").length / 300)
@@ -55,66 +46,84 @@ export default function PostsTemplate({ data }) {
             <Layout>
                 <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
                 <PostsHeader/>
-                <div className="categoryFilterContainer">
+            <div className="categoryFilterContainer">
             <div>
+            <span 
+                onClick={() => setFilter("ALL")}
+            >
+                <Chip
+                icon={<LibraryBooks style={{fontSize: 20}} />}
+                label="View All"
+                className="slightMarg"
+                color="secondary"
+                clickable
+                variant="outlined"
+                />
+            </span>
+            <span
+            onClick={() => setFilter("NodeJS")}
+            >
             <Chip
-            icon={<LibraryBooks style={{fontSize: 20}} />}
-            label="View All"
-            className="slightMarg"
-            color="secondary"
-            clickable
-            onClick={e => handleFilterChange(e)}
-            variant="outlined"
+                icon={Icons.NodeJS}
+                label="NodeJS"
+                color="secondary"
+                clickable
+                variant="outlined"
+                className="slightMarg"
             />
-            <Chip
-            icon={Icons.NodeJS}
-            label="NodeJS"
-            color="secondary"
-            clickable
-            variant="outlined"
-            onClick={e => handleFilterChange(e)}
-            className="slightMarg"
-            />
+            </span>
             </div>
             <div>
+            <span
+            onClick={() => setFilter("ReactJS")}
+            >
             <Chip
             icon={Icons.ReactJS}
             className="slightMarg"
             label="ReactJS"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
+            <span
+            onClick={() => setFilter("Hosting")}
+            >
             <Chip
             icon={Icons.Hosting}
             label="Hosting"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
             </div>
             <div>
+            <span
+            onClick={() => setFilter("WordPress")}
+            >
             <Chip
             icon={Icons.WordPress}
             label="WordPress"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
+            <span
+            onClick={() => setFilter("Story Time")}
+            >
             <Chip
             icon={Icons.StoryTime}
             label="Story Time"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
             </div>
             </div>
     
@@ -151,64 +160,82 @@ export default function PostsTemplate({ data }) {
             <PostsHeader/>
             <div className="categoryFilterContainer">
             <div>
+            <span 
+                onClick={() => setFilter("ALL")}
+            >
+                <Chip
+                icon={<LibraryBooks style={{fontSize: 20}} />}
+                label="View All"
+                className="slightMarg"
+                color="secondary"
+                clickable
+                variant="outlined"
+                />
+            </span>
+            <span
+            onClick={() => setFilter("NodeJS")}
+            >
             <Chip
-            icon={<LibraryBooks style={{fontSize: 20}} />}
-            label="View All"
-            className="slightMarg"
-            color="secondary"
-            clickable
-            onClick={e => handleFilterChange(e)}
-            variant="outlined"
+                icon={Icons.NodeJS}
+                label="NodeJS"
+                color="secondary"
+                clickable
+                variant="outlined"
+                className="slightMarg"
             />
-            <Chip
-            icon={Icons.NodeJS}
-            label="NodeJS"
-            color="secondary"
-            clickable
-            variant="outlined"
-            onClick={e => handleFilterChange(e)}
-            className="slightMarg"
-            />
+            </span>
             </div>
             <div>
+            <span
+            onClick={() => setFilter("ReactJS")}
+            >
             <Chip
             icon={Icons.ReactJS}
             className="slightMarg"
             label="ReactJS"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
+            <span
+            onClick={() => setFilter("Hosting")}
+            >
             <Chip
             icon={Icons.Hosting}
             label="Hosting"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
             </div>
             <div>
+            <span
+            onClick={() => setFilter("WordPress")}
+            >
             <Chip
             icon={Icons.WordPress}
             label="WordPress"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
+            <span
+            onClick={() => setFilter("Story Time")}
+            >
             <Chip
             icon={Icons.StoryTime}
             label="Story Time"
             className="slightMarg"
             color="secondary"
             clickable
-            onClick={e => handleFilterChange(e)}
             variant="outlined"
             />
+            </span>
             </div>
             </div>
 
