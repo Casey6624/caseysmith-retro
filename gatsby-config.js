@@ -49,7 +49,11 @@ module.exports = {
         protocol: "https",
         hostingWPCOM: false,
         useACF: true,
-        verboseOutput: true
+        verboseOutput: true,
+        includedRoutes: [
+          "**/posts",
+          "**/pages"
+        ],
       },
     },
 

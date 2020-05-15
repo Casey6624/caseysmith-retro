@@ -1,13 +1,12 @@
-import React, { useState, Fragment } from "react"
+import React, { useState } from "react"
 import { Link } from "gatsby"
 import Grid from '@material-ui/core/Grid';
-import Button from '@material-ui/core/Button';
 import "./AboutMe.css"
 // copy
 import Copy from "./Copy"
 // React 95 stuff
-import { createGlobalStyle, ThemeProvider } from "styled-components";
-import { reset, themes, List, ListItem, Divider, Fieldset, Window, WindowContent, WindowHeader } from "react95";
+import { ThemeProvider } from "styled-components";
+import { themes, List, ListItem, Divider, Fieldset, Window, WindowContent, WindowHeader } from "react95";
 
 export default function AboutMe(props) {
 
@@ -23,8 +22,8 @@ export default function AboutMe(props) {
 
                 <button className="btnAboutMe" style={{ color: currIndex === 0 ? btnActiveColor : null }} onClick={() => setCurrIndex(0)}>TECH STACK</button>
                 <button className="btnAboutMe" style={{ color: currIndex === 1 ? btnActiveColor : null }} onClick={() => setCurrIndex(1)}>WHO AM I</button>
-                <button className="btnAboutMe" style={{ color: currIndex === 2 ? btnActiveColor : null }} onClick={() => setCurrIndex(2)}>My Passions</button>
-                <Link to="/thoughts/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Thoughts</button></Link >
+                <Link to="/thoughts/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Thoughts</button></Link>
+                <Link to="/portfolio/" style={{ textAlign: "center" }}><button className="btnAboutMe">My Portfolio </button></Link>
             </Grid>
             <Grid xs={12} md={8} className="infoContainer">
                 <ThemeProvider theme={themes.default}>

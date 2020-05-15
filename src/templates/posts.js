@@ -304,9 +304,7 @@ query postsQuery{
                 excerpt
                 slug
               	content
-              categories {
-                name
-              }
+              categories
                 date(formatString: "MMMM DD, YYYY")
               featured_media {
                   source_url

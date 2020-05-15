@@ -6,8 +6,33 @@ const { paginate } = require('gatsby-awesome-pagination')
 const getOnlyPublished = edges =>
     _.filter(edges, ({ node }) => node.status === 'publish')
 
-exports.createPages = ({ actions, graphql }) => {
+exports.createPages = async ({ actions, graphql }) => {
     const { createPage } = actions
+
+
+    let graphQLPageQuery = await graphql(`
+    {
+        allWordpressPage{
+        edges{
+          node{
+            id
+            title
+            content
+            excerpt
+            slug
+            date(formatString: "MMMM DD, YYYY")
+            featured_media {
+              source_url
+            }
+          }
+        }
+      }
+    }
+    `)
+
+    console.log( await graphQLPageQuery.data)
+
+    throw new Error('fuckk hahaha')
 
     return graphql(`
       {
@@ -64,6 +89,8 @@ exports.createPages = ({ actions, graphql }) => {
                 component: postTemplate,
             })
         })
+
+
 
 }
 
