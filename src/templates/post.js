@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Arrow from '@material-ui/icons/KeyboardArrowLeft';
+import DateRange from '@material-ui/icons/DateRange';
 
 class PostTemplate extends Component {
     render() {
@@ -13,11 +14,12 @@ class PostTemplate extends Component {
         return (
             <Layout>
                 <Grid container className="homeHeader">
+        
                     <Grid item xs={12} md={7} className="headerIntro">
                         <div>
                             <h1 className="postHeader" dangerouslySetInnerHTML={{ __html: post.title }}></h1>
                         </div>
-                        <div class="emojiBlurb">
+                        <div className="emojiBlurb">
                         <span>🤔</span>
                         </div>
                     </Grid>
@@ -27,6 +29,8 @@ class PostTemplate extends Component {
                     <Arrow /> BACK TO POSTS
                     </Button>
                 </Link>
+                
+                <div className="post-date"> <DateRange />  {post.date} </div>
                 <div
                     style={{
                         maxWidth: "1500px",
@@ -60,6 +64,7 @@ export const pageQuery = graphql`
         wordpressPost(id: { eq: $id }) {
             title
             content
+            date(formatString: "MMMM DD, YYYY")
         }
     }
 `
