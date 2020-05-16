@@ -19,17 +19,17 @@ import PostsHeader from "./PostsHeader"
 // Libraries
 const striptags = require('striptags');
 
-export default function PortfolioTemplate({ data }) {
+export default function PortfolioTemplate({ data: { allWordpressPage } }) {
 
     return (
 
         <Layout>
             <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
-            <PostsHeader/>
+            <PostsHeader titleText="Stuff I've Created"/>
 
             <div className="postList">
                 <Grid container>
-                    {data.allWordpressPost.edges.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
+                    {allWordpressPage.edges.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
                         <Card key={node.slug} className="card" id="post">
                             <Link to={'thought/' + node.slug}>
                                 <div className="dateContainer">
@@ -40,7 +40,6 @@ export default function PortfolioTemplate({ data }) {
 
                                 <div className="paraText" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                 <img className="featuredWPImage" alt={node.title} src={node.featured_media.source_url} />
-                                <div className="timeToRead"> <p><AccessTime /></p> <p>{generateReadingTimes(node.content)} Minute Read</p></div>
                             </Link>
                         </Card>
                     </Grid>
@@ -77,7 +76,7 @@ export default function PortfolioTemplate({ data }) {
 }
 
 PortfolioTemplate.propTypes = {
-    data: PropTypes.object.isRequired,
+    //: PropTypes.object.isRequired,
     edges: PropTypes.array,
 }
 
