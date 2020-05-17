@@ -1,6 +1,7 @@
 import React, { Fragment } from "react"
 import Button from '@material-ui/core/Button';
 import Arrow from '@material-ui/icons/KeyboardArrowLeft';
+import ArrowR from '@material-ui/icons/KeyboardArrowRight';
 import Grid from '@material-ui/core/Grid';
 import Link from "gatsby-link"
 
@@ -20,11 +21,18 @@ export default function PostsHeader({ titleText = "Stuff I've Written About", em
             </Grid>
         </Grid>
     </div>
-    <Link style={{textDecoration: "none"}} to="/">
+        <div className="side-by-side-flex">
+        <Link style={{textDecoration: "none"}} to="/">
             <Button color="secondary">
             <Arrow /> BACK TO HOME
             </Button>
     </Link>
+        <Link style={{textDecoration: "none"}} to="/portfolio">
+            <Button color="secondary">
+            VIEW MY PORTFOLIO <ArrowR /> 
+            </Button>
+    </Link>
+        </div>
         </Fragment>
     )
 }

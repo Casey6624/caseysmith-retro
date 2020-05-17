@@ -749,15 +749,6 @@ pre tt:after {
   justify-content: space-between !important;
 }
 
-.footer{
-  background: #405C72;
-  text-align: center;
-  font-family: 'Bangers', cursive;
-  font-size: 1.5rem;
-  line-height: initial;
-  padding: 1rem 1rem 0 1rem;
-}
-
 .emailAddress{
   font-size: 2rem;
   text-decoration: none;

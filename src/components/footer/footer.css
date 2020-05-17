@@ -1,0 +1,53 @@
+
+.footer{
+    background: #405C72;
+    text-align: center;
+    font-family: 'Bangers', cursive;
+    font-size: 1.5rem;
+    line-height: initial;
+    padding: 1rem 1rem 1rem 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.mail-me{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0.5;
+}
+
+.legal-stuff{
+    text-align: center;
+}
+
+.contact-container{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.legal-stuff h1{
+    text-align: center;
+    color: white;
+    background: #733c87;
+    font-size: 1.5rem;
+    margin: 0.2rem 0.2rem 0.2rem 1rem;
+    padding: 0.5rem;
+    z-index: 2;
+    font-family: 'Anton', sans-serif;
+    transform: skew(-13deg);
+    width: fit-content;
+    font-family: 'Bungee Shade', cursive;
+}
+
+.social-icons-footer{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    align-items: center;
+    margin: 0.5;
+    background: #405C72;
+}
