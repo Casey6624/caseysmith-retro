@@ -4,18 +4,19 @@ import Arrow from '@material-ui/icons/KeyboardArrowLeft';
 import Grid from '@material-ui/core/Grid';
 import Link from "gatsby-link"
 
-export default function PostsHeader({ titleText = "Stuff I've Written About" }){
+export default function PostsHeader({ titleText = "Stuff I've Written About", emoji = "✍️" }){
     return(
         <Fragment>
             <div className="thoughtsMasterSVGContainer">
-        <Grid container className="postsHeaderContainer">
+        <Grid container className="postsHeaderContainer">   
+
             <Grid item xs={12} md={7} className="headerIntro">
                 <div>
     <h1 className="postsHeader"> {titleText} </h1>
                 </div>
             </Grid>
             <Grid item xs={12} md={4} className="emojiContainer">
-                <h1 className="emojiBlurb"><span role="img">✍️</span></h1>
+                <h1 className="emojiBlurb"><span role="img"> {emoji} </span></h1>
             </Grid>
         </Grid>
     </div>

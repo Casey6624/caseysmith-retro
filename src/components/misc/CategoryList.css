@@ -1,0 +1,35 @@
+.list-item{
+    color: white;
+    background: #733c87;
+    position: relative;
+    font-size: 1.25rem;
+    margin: 0.2rem;
+    padding: 0.5rem;
+    z-index: 2;
+    font-family: 'Anton', sans-serif;
+    transform: skew(-7deg);
+    width: fit-content;
+    font-family: 'Bungee Shade', cursive;
+}
+
+.list-container{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.wordpress{
+    background: #1282d6;
+}
+
+.nodejs{
+    background: #43853d;
+}
+
+.reactjs{
+    background: #61dafb;
+}
+
+.graphql{
+    background: #E10098;
+}

@@ -7,34 +7,33 @@ import Chip from '@material-ui/core/Chip';
 import TextField from '@material-ui/core/TextField';
 import Button from '@material-ui/core/Button';
 import Email from '@material-ui/icons/Email';
-import AccessTime from '@material-ui/icons/AccessTime';
 import Send from '@material-ui/icons/Send';
-import DateRange from '@material-ui/icons/DateRange';
-import LibraryBooks from '@material-ui/icons/LibraryBooks'
 //Components
 import Layout from "../components/layout";
 import Icons from "../components/Icons/Icons"
 import SEO from "../components/seo";
 import PostsHeader from "./PostsHeader"
+import CategoryList from "../components/misc/CategoryList"
 // Libraries
 const striptags = require('striptags');
 
 export default function PortfolioTemplate({ data: { allWordpressPage } }) {
 
+  console.log(allWordpressPage)
+
     return (
 
         <Layout>
-            <SEO title="Thoughts" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
-            <PostsHeader titleText="Stuff I've Created"/>
+            <SEO title="Portfolio" keywords={[`Casey`, `Smith`, `Web`, "Mobile", `Developer`, "Sheffield"]} />
+            <PostsHeader titleText="Stuff I've Created" emoji="💜"/>
 
             <div className="postList">
                 <Grid container>
                     {allWordpressPage.edges.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
                         <Card key={node.slug} className="card" id="post">
-                            <Link to={'thought/' + node.slug}>
+                            <Link to={'project/' + node.slug}>
                                 <div className="dateContainer">
-                                    <DateRange />
-                                    <p id="wpPostDate">{node.date}</p>
+                                  <CategoryList categories={node.categories}/>
                                 </div>
                                 <h3 className="wpPostTitle">{node.title}</h3>
 
@@ -44,31 +43,6 @@ export default function PortfolioTemplate({ data: { allWordpressPage } }) {
                         </Card>
                     </Grid>
                     ))}
-
-                   <Card className="card" id="post">
-                    <div className="dateContainer">
-                                    <Email />
-                                    <p id="wpPostDate"> Monthly Newsletter</p>
-                                </div>
-                              <h3 className="wpPostTitle">Join My Mailing List!</h3>             
-                            <div style={{ display: "flex" }}>
-                            <TextField
-                                id="mce-EMAIL"
-                                label="Email Address"
-                                name="EMAIL" 
-                                placeholder="Bob@test.com" 
-                                required
-                                className="email"
-                            />
-                                <Button 
-                                defaultValue="Subscribe" 
-                                name="subscribe"
-                                color="secondary"
-                                id="mc-embedded-subscribe"
-                                type="submit"
-                                ><Send/></Button>
-                            </div>
-                            </Card>
                 </Grid>
             </div>
         </Layout>
@@ -88,6 +62,9 @@ query pageQuery{
           id
           title
           content
+          categories {
+            name
+          }
           excerpt
           slug
         date(formatString: "MMMM DD, YYYY")
