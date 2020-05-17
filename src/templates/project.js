@@ -6,6 +6,8 @@ import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Arrow from '@material-ui/icons/KeyboardArrowLeft';
 import "./project.css"
+// components
+import ProjectLinks from "../components/misc/ProjectLinks"
 
 class ProjectTemplate extends Component {
     render() {
@@ -52,6 +54,9 @@ class ProjectTemplate extends Component {
                             className="paraText" dangerouslySetInnerHTML={{ __html: page.content }} />
                     </div>
                 </div>
+
+                <ProjectLinks project={page.acf.urlwhereaccessible} github={page.acf.githuburl}/>
+
             </Layout>
         )
     }
@@ -65,6 +70,12 @@ export const pageQuery = graphql`
         wordpressPage(id: { eq: $id }) {
             title
             content
+            acf{
+                project_type
+                card_desc
+                urlwhereaccessible
+                githuburl
+              }
             date(formatString: "MMMM DD, YYYY")
         }
     }

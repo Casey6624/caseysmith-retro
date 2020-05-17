@@ -4,7 +4,6 @@ import "./CategoryList.css"
 export default function CategoryList({ categories }){
 
     function generateClassName(input){
-        console.log(input.split(' ').join('').toLowerCase())
         return input.split(' ').join('').toLowerCase()
     }
 
