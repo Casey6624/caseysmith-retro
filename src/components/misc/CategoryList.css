@@ -27,7 +27,11 @@
     background: #43853d;
 }
 
-.reactjs{
+.php{
+    background: rebeccapurple;
+}
+
+.reactjs, .reactnative{
     background: #61dafb;
 }
 

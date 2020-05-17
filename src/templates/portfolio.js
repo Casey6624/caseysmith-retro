@@ -59,6 +59,12 @@ query pageQuery{
           id
           title
           content
+          acf{
+            project_type
+            card_desc
+            urlwhereaccessible
+            githuburl
+          }
           categories {
             name
           }

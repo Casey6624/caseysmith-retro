@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 import Grid from '@material-ui/core/Grid';
 import Button from '@material-ui/core/Button';
 import Arrow from '@material-ui/icons/KeyboardArrowLeft';
-import DateRange from '@material-ui/icons/DateRange';
+import "./project.css"
 
 class ProjectTemplate extends Component {
     render() {
@@ -20,7 +20,7 @@ class ProjectTemplate extends Component {
                             <h1 className="postHeader" dangerouslySetInnerHTML={{ __html: page.title }}></h1>
                         </div>
                         <div className="emojiBlurb">
-                        <span>🤔</span>
+                        <span>☺️</span>
                         </div>
                     </Grid>
                 </Grid>
@@ -29,7 +29,9 @@ class ProjectTemplate extends Component {
                     <Arrow /> BACK TO PORTFOLIO
                     </Button>
                 </Link>
-                
+                <h1 className="project-title">
+                    {page.title}
+                </h1>
                 <div
                     style={{
                         maxWidth: "1500px",
