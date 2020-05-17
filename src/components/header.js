@@ -21,6 +21,7 @@ export default function Header(props) {
         <Menu left styles={styles}>
           <a id="home" className="menu-item" href="/">HOME</a><br />
           <a id="about" className="menu-item" href="/thoughts">THOUGHTS</a><br />
+          <a id="about" className="menu-item" href="/portfolio">PORTFOLIO</a><br />
           <div id="mc_embed_signup">
                             <form action="https://gmail.us3.list-manage.com/subscribe/post?u=760f4d6895db021cca3b4ffbc&id=2fecd0b44c" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" className="validate" target="_blank" noValidate>
                             <div id="mc_embed_signup_scroll">

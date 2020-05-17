@@ -9,7 +9,7 @@ import DateRange from '@material-ui/icons/DateRange';
 
 class ProjectTemplate extends Component {
     render() {
-        const post = this.props.data.wordpressPost
+        const page = this.props.data.wordpressPage
 
         return (
             <Layout>
@@ -17,20 +17,19 @@ class ProjectTemplate extends Component {
         
                     <Grid item xs={12} md={7} className="headerIntro">
                         <div>
-                            <h1 className="postHeader" dangerouslySetInnerHTML={{ __html: post.title }}></h1>
+                            <h1 className="postHeader" dangerouslySetInnerHTML={{ __html: page.title }}></h1>
                         </div>
                         <div className="emojiBlurb">
                         <span>🤔</span>
                         </div>
                     </Grid>
                 </Grid>
-                <Link style={{textDecoration: "none"}} to="/thoughts/">
+                <Link style={{textDecoration: "none"}} to="/portfolio/">
                     <Button color="secondary">
                     <Arrow /> BACK TO PORTFOLIO
                     </Button>
                 </Link>
                 
-                <div className="post-date"> <DateRange />  {post.date} </div>
                 <div
                     style={{
                         maxWidth: "1500px",
@@ -48,7 +47,7 @@ class ProjectTemplate extends Component {
                                 width: "100%",
                                 height: "auto",
                             }}
-                            className="paraText" dangerouslySetInnerHTML={{ __html: post.content }} />
+                            className="paraText" dangerouslySetInnerHTML={{ __html: page.content }} />
                     </div>
                 </div>
             </Layout>
@@ -61,7 +60,7 @@ export default ProjectTemplate
 
 export const pageQuery = graphql`
     query currentPostQuery2($id: String!) {
-        wordpressPost(id: { eq: $id }) {
+        wordpressPage(id: { eq: $id }) {
             title
             content
             date(formatString: "MMMM DD, YYYY")
