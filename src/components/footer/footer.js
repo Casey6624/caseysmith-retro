@@ -20,8 +20,8 @@ export default function Footer(props) {
                 </div>
             </footer>
             <div className="social-icons-footer">
-                    <p id="githubLogo" onClick={() => window.open(GITHUB_URL)}>{Icons.Github}</p>
-                    <p id="twitterLogo" onClick={() => window.open(TWITTER_URL)}>{Icons.Twitter}</p>
+                    <p id="githubLogoF" onClick={() => window.open(GITHUB_URL)}>{Icons.Github}</p>
+                    <p id="twitterLogoF" onClick={() => window.open(TWITTER_URL)}>{Icons.Twitter}</p>
                 </div>
         </div>
     )

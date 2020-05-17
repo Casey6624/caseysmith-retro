@@ -14,8 +14,6 @@ import Icons from "../components/Icons/Icons"
 import SEO from "../components/seo";
 import PostsHeader from "./PostsHeader"
 import CategoryList from "../components/misc/CategoryList"
-// Libraries
-const striptags = require('striptags');
 
 export default function PortfolioTemplate({ data: { allWordpressPage } }) {
 
@@ -32,11 +30,10 @@ export default function PortfolioTemplate({ data: { allWordpressPage } }) {
                     {allWordpressPage.edges.map(({ node }) => (<Grid item xs={12} md={4} key={node.slug}>
                         <Card key={node.slug} className="card" id="post">
                             <Link to={'project/' + node.slug}>
+                                <h3 className="wpPostTitle">{node.title}</h3>
                                 <div className="dateContainer">
                                   <CategoryList categories={node.categories}/>
                                 </div>
-                                <h3 className="wpPostTitle">{node.title}</h3>
-
                                 <div className="paraText" dangerouslySetInnerHTML={{ __html: node.excerpt }} />
                                 <img className="featuredWPImage" alt={node.title} src={node.featured_media.source_url} />
                             </Link>

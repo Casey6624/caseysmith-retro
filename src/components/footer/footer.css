@@ -17,6 +17,7 @@
     justify-content: center;
     align-items: center;
     margin: 0.5;
+    color: white;
 }
 
 .legal-stuff{
@@ -51,3 +52,16 @@
     margin: 0.5;
     background: #405C72;
 }
+
+.social-icons-footer p{
+    color: white !important;
+}
+
+#githubLogoF, #twitterLogoF{
+    fill: white;
+  }
+
+  #githubLogoF:hover, #twitterLogoF:hover{
+    fill: #733c87;
+    cursor: pointer;
+  }
