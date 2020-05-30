@@ -3,19 +3,19 @@ import Link from "gatsby-link"
 import PropTypes from "prop-types"
 import Grid from '@material-ui/core/Grid';
 import Card from '@material-ui/core/Card';
-import Chip from '@material-ui/core/Chip';
-import TextField from '@material-ui/core/TextField';
-import Button from '@material-ui/core/Button';
-import Email from '@material-ui/icons/Email';
-import Send from '@material-ui/icons/Send';
 //Components
 import Layout from "../components/layout";
-import Icons from "../components/Icons/Icons"
 import SEO from "../components/seo";
 import PostsHeader from "./PostsHeader"
 import CategoryList from "../components/misc/CategoryList"
+// libraries
+import styled from "styled-components"
 
 export default function PortfolioTemplate({ data: { allWordpressPage } }) {
+
+  const ProjectType = styled.h3`
+    font-weight: bold;
+  `
 
   console.log(allWordpressPage)
 
@@ -31,6 +31,7 @@ export default function PortfolioTemplate({ data: { allWordpressPage } }) {
                         <Card key={node.slug} className="card" id="post">
                             <Link to={'project/' + node.slug}>
                                 <h3 className="wpPostTitle">{node.title}</h3>
+                                <ProjectType> {node.acf.project_type}</ProjectType>
                                 <div className="dateContainer">
                                   <CategoryList categories={node.categories}/>
                                 </div>
